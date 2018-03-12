@@ -7,10 +7,12 @@ import { ProductsService } from "../products.service";
   styleUrls: ['./right-aside.component.css']
 })
 export class RightAsideComponent implements OnInit {
-
   constructor(private productsService: ProductsService) { }
+  smartphones: any[];
 
   ngOnInit() {
+    this.smartphones = this.productsService.products;
+    //console.log(this.smartphones);
   }
 
   
