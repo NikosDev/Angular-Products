@@ -40,22 +40,50 @@ export class ProductsService {
   }
 
   uniqueBrand(){
-    let result = Array.from(new Set(this.products.map(item => item.brand)));
+    let result = [];
+    this.products.filter(function(item){
+      var i = result.findIndex(x => x.brand == item.brand);
+      if(i <= -1){
+            result.push(item);
+      }
+      return null;
+    });
     return result;
   } 
 
   uniqueRam(){
-    let result = Array.from(new Set(this.products.map(item => item.ram)));
+    let result = [];
+    this.products.filter(function(item){
+      var i = result.findIndex(x => x.ram == item.ram);
+      if(i <= -1){
+            result.push(item);
+      }
+      return null;
+    });
     return result;
   } 
 
   uniqueCpu(){
-    let result = Array.from(new Set(this.products.map(item => item.cpu)));
+    let result = [];
+    this.products.filter(function(item){
+      var i = result.findIndex(x => x.cpu == item.cpu);
+      if(i <= -1){
+            result.push(item);
+      }
+      return null;
+    });
     return result;
   } 
 
   uniqueOs(){
-    let result = Array.from(new Set(this.products.map(item => item.os)));
+    let result = [];
+    this.products.filter(function(item){
+      var i = result.findIndex(x => x.os == item.os);
+      if(i <= -1){
+            result.push(item);
+      }
+      return null;
+    });
     return result;
   } 
 }

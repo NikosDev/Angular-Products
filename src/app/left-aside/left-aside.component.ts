@@ -12,6 +12,9 @@ export class LeftAsideComponent implements OnInit {
   ramCheckbox: any[];
   cpuCheckbox: any[];
   osCheckbox: any[];
+  filters: any[] ;
+  checkboxName: string;
+  obj: object = {};
   
 
   ngOnInit(){
@@ -19,6 +22,15 @@ export class LeftAsideComponent implements OnInit {
     this.ramCheckbox = this.productsService.uniqueRam();
     this.cpuCheckbox = this.productsService.uniqueCpu();
     this.osCheckbox = this.productsService.uniqueOs();
+  }
+
+  checkboxValues(product,checkboxName){ 
+    this.filters = [];
+      this.filters.push(product[checkboxName]);
+      this.obj = Object.assign({[checkboxName]: this.filters}, this.obj);
+     
+      console.log(this.obj);
+    
   }
   
 }
