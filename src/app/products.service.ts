@@ -116,20 +116,18 @@ export class ProductsService {
    let y= this.products.filter(x =>
       Object.keys(this.filters).every(f => 
       this.filters[f].some( z => z == x[f] )));
-    console.log(this.filters,'this is results from product service');
-    var onoma = Math.random().toString(36).substring(7);
+    console.log(this.filters,'this is results from product service');    
     
-    
-    this.changeMessage('test'+ onoma);
+    this.changeMessage(y);
     //return this.filters;
   }
 
   // =========> RXJS POWER <==========
 
-  private messageSource = new BehaviorSubject<string>('');
+  private messageSource = new BehaviorSubject<any>(this.products);
   currentMessage = this.messageSource.asObservable();
 
-  changeMessage(message:string){
+  changeMessage(message:any[]){
     this.messageSource.next(message)
     console.log('RXJS RESULT',this.currentMessage);
   }

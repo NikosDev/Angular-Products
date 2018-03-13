@@ -9,12 +9,11 @@ import { ProductsService } from "../products.service";
 export class RightAsideComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
   smartphones: {};
-  message: string;
+  message: any[];
   ngOnInit() {
-    this.productsService.currentMessage.subscribe(message => this.message = message)
-    console.log('filtered smartphones',this.message);
+    let x = this.productsService.currentMessage.subscribe(message => this.message = message);
+    console.log(this.message,'teegfe');
   }
-
   
 
 }
