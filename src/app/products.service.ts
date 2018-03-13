@@ -99,16 +99,20 @@ export class ProductsService {
   removeFilters(keys,val,arr){
     let index = this.filters[keys].indexOf(val);
     this.filters[keys].splice(index, 1);
-    console.log('keys:',keys);
+    if (this.filters[keys].length==0) {
+      delete this.filters[keys];
+    }
+    this.showResults();
+    /* console.log('keys:',keys);
     console.log('val:',val);
     console.log('array send:',arr);
-    console.log('Service filrers:',this.filters);
+    console.log('Service filrers:',this.filters); */
   }
 
   showResults(){
    let y= this.products.filter(x =>
       Object.keys(this.filters).every(f => 
       this.filters[f].some( z => z == x[f] )));
-    //console.log(this.filters,'this is results from product service');
+    console.log(this.filters,'this is results from product service');
   }
 }
