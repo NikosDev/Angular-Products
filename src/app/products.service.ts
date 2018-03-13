@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class ProductsService {
 
-  constructor() { }
+  constructor() { } 
+
   filters: object = {};
 
   dataArray:any[] = [];
@@ -114,5 +117,20 @@ export class ProductsService {
       Object.keys(this.filters).every(f => 
       this.filters[f].some( z => z == x[f] )));
     console.log(this.filters,'this is results from product service');
+    var onoma = Math.random().toString(36).substring(7);
+    
+    
+    this.changeMessage('test'+ onoma);
+    //return this.filters;
+  }
+
+  // =========> RXJS POWER <==========
+
+  private messageSource = new BehaviorSubject<string>('');
+  currentMessage = this.messageSource.asObservable();
+
+  changeMessage(message:string){
+    this.messageSource.next(message)
+    console.log('RXJS RESULT',this.currentMessage);
   }
 }

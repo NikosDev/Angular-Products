@@ -18,13 +18,19 @@ export class LeftAsideComponent implements OnInit {
   osArray: any[] = [];
   checkboxName: string;
   obj: object = {};
+  message: string;
+
   
 
   ngOnInit(){
+    this.productsService.currentMessage.subscribe(message => this.message = message);
     this.brandCheckbox = this.productsService.uniqueBrand();
     this.ramCheckbox = this.productsService.uniqueRam();
     this.cpuCheckbox = this.productsService.uniqueCpu();
     this.osCheckbox = this.productsService.uniqueOs();
+  }
+  newMessage(){
+    this.productsService.changeMessage('victory!')
   }
   
   checkboxValues(product,checkboxName, event){

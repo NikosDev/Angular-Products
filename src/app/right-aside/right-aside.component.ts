@@ -8,11 +8,11 @@ import { ProductsService } from "../products.service";
 })
 export class RightAsideComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
-  smartphones: any[];
-
+  smartphones: {};
+  message: string;
   ngOnInit() {
-    this.smartphones =  this.productsService.dataArray;
-    console.log(this.smartphones,'gg wp');
+    this.productsService.currentMessage.subscribe(message => this.message = message)
+    console.log('filtered smartphones',this.message);
   }
 
   
