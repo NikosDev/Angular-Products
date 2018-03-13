@@ -11,8 +11,8 @@ export class RightAsideComponent implements OnInit {
   smartphones: any[];
 
   ngOnInit() {
-    this.smartphones = this.productsService.products;
-    //console.log(this.smartphones);
+    this.smartphones =  this.productsService.dataArray;
+    console.log(this.smartphones,'gg wp');
   }
 
   

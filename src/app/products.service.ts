@@ -4,6 +4,9 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
 
   constructor() { }
+  filters: object = {};
+
+  dataArray:any[] = [];
 
   products = [
     { brand: "apple", color: "gold", name: 'iphone7', ram: 4, cpu: 2, os: 'ios' },
@@ -26,7 +29,7 @@ export class ProductsService {
     { brand: "apple", color: "white", name: 'iphone6', ram: 16, cpu: 8, os: 'ios' }
   ];
 
-  filters = {
+  /* filters = {
     brand:['apple'],
     color: ['gold']
   }
@@ -35,9 +38,9 @@ export class ProductsService {
     let result = this.products.filter(x =>
       Object.keys(this.filters).every(f => 
       this.filters[f].some( z => z == x[f] )));
-    console.log(result);
+    //console.log(result);
 
-  }
+  } */
 
   uniqueBrand(){
     let result = [];
@@ -86,4 +89,26 @@ export class ProductsService {
     });
     return result;
   } 
+
+  sendFilters(value){
+    this.filters = value;
+    //console.log(this.filters,'this is filters from product service');
+    this.showResults();
+  }
+
+  removeFilters(keys,val,arr){
+    let index = this.filters[keys].indexOf(val);
+    this.filters[keys].splice(index, 1);
+    console.log('keys:',keys);
+    console.log('val:',val);
+    console.log('array send:',arr);
+    console.log('Service filrers:',this.filters);
+  }
+
+  showResults(){
+   let y= this.products.filter(x =>
+      Object.keys(this.filters).every(f => 
+      this.filters[f].some( z => z == x[f] )));
+    //console.log(this.filters,'this is results from product service');
+  }
 }

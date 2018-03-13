@@ -1,27 +1,27 @@
 <div class="box">
   <h5>Brands:</h5>
   <div *ngFor="let brand of brandCheckbox ">
-      <input  type="checkbox"  (click)="checkboxValues(brand,'brand')"> {{ brand.brand }}
+      <input  type="checkbox"  (click)="checkboxValues(brand,'brand', $event)"> {{ brand.brand }}
   </div>
 </div>
 
 <div class="box">
   <h5>Cpu:</h5>
   <div *ngFor="let cpu of cpuCheckbox ">
-      <input  type="checkbox" (click)="checkboxValues(cpu,'cpu')"> {{ cpu.cpu }}cores
+      <input  type="checkbox" (click)="checkboxValues(cpu,'cpu', $event)"> {{ cpu.cpu }}cores
   </div>
 </div>
 
 <div class="box">
   <h5>Ram:</h5>
   <div *ngFor="let ram of ramCheckbox ">
-      <input  type="checkbox"  (click)="checkboxValues(ram,'ram')"> {{ ram.ram }}GB
+      <input  type="checkbox"  (click)="checkboxValues(ram,'ram', $event)"> {{ ram.ram }}GB
   </div>
 </div>
 
 <div class="box">
   <h5>OS:</h5>
   <div *ngFor="let os of osCheckbox ">
-      <input  type="checkbox"  (click)="checkboxValues(os,'os')"> {{ os.os }}
+      <input  type="checkbox"  (click)="checkboxValues(os,'os', $event)"> {{ os.os }}
   </div>
 </div>

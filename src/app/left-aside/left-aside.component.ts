@@ -12,7 +12,10 @@ export class LeftAsideComponent implements OnInit {
   ramCheckbox: any[];
   cpuCheckbox: any[];
   osCheckbox: any[];
-  filters: any[] ;
+  brandArray: any[] = [];
+  cpuArray: any[] = [];
+  ramArray: any[] = [];
+  osArray: any[] = [];
   checkboxName: string;
   obj: object = {};
   
@@ -23,14 +26,45 @@ export class LeftAsideComponent implements OnInit {
     this.cpuCheckbox = this.productsService.uniqueCpu();
     this.osCheckbox = this.productsService.uniqueOs();
   }
-
-  checkboxValues(product,checkboxName){ 
-    this.filters = [];
-      this.filters.push(product[checkboxName]);
-      this.obj = Object.assign({[checkboxName]: this.filters}, this.obj);
-     
-      console.log(this.obj);
+  
+  checkboxValues(product,checkboxName, event){
+    if ( event.target.checked ) {
+      if(checkboxName=='brand') {
+        this.brandArray.push(product[checkboxName]);
+        this.obj = Object.assign({[checkboxName]: this.brandArray}, this.obj);
+        return this.productsService.sendFilters(this.obj);
+      }
+      if(checkboxName=='cpu') {
+        this.cpuArray.push(product[checkboxName]);
+        this.obj = Object.assign({[checkboxName]: this.cpuArray}, this.obj);
+        return this.productsService.sendFilters(this.obj);
+      }
+      if(checkboxName=='ram') {
+        this.ramArray.push(product[checkboxName]);
+        this.obj = Object.assign({[checkboxName]: this.ramArray}, this.obj);
+        return this.productsService.sendFilters(this.obj);
+      }
+      if(checkboxName=='os') {
+        this.osArray.push(product[checkboxName]);
+        this.obj = Object.assign({[checkboxName]: this.osArray}, this.obj);
+        return this.productsService.sendFilters(this.obj);
+      }  
+    }else{
+      if(checkboxName=='brand') {
+          return this.productsService.removeFilters(checkboxName, product[checkboxName],this.brandArray);
+      }
+      else if(checkboxName=='cpu') {
+        return this.productsService.removeFilters(checkboxName, product[checkboxName],this.cpuArray);
+      }
+      else if(checkboxName=='ram') {
+        return this.productsService.removeFilters(checkboxName, product[checkboxName],this.ramArray);
+      }
+      else if(checkboxName=='os') {
+        return this.productsService.removeFilters(checkboxName, product[checkboxName],this.osArray);
+      }     
+    }
     
   }
+
   
 }
