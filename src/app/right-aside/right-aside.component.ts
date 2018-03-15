@@ -8,7 +8,6 @@ import { ProductsService } from "../products.service";
 })
 export class RightAsideComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
-  smartphones: {};
   message: any[];
   ngOnInit() {
     let x = this.productsService.currentMessage.subscribe(message => this.message = message);

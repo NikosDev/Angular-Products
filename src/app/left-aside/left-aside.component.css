@@ -1,3 +1,12 @@
 .box{
     margin-bottom: 20px;
 }
+
+.pretty {
+    display: inherit !important;
+    margin-bottom: 6px;
+}
+
+.pretty input{
+    width: 0;
+}

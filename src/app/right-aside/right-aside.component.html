@@ -1,9 +1,22 @@
-<div class="box">
-    <h5>Smartphones:</h5>
-    <div *ngFor="let smartphone of smartphones  ">
-         {{ smartphone.brand }}
-    </div>
-  </div>
-  <div *ngFor="let apotelesma of message  ">
-         {{ apotelesma.brand }}
-    </div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+        <th>Brand</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Ram</th>
+        <th>Cpu</th>
+        <th>OS</th>
+        </tr>
+    </thead>
+    <tbody  *ngFor="let apotelesma of message" >
+        <tr>
+        <td>{{apotelesma.brand}}</td>
+        <td>{{apotelesma.name}}</td>
+        <td>{{apotelesma.color}}</td>
+        <td>{{apotelesma.ram}}GB</td>
+        <td>{{apotelesma.cpu}} Cores</td>
+        <td>{{apotelesma.os}}</td>
+        </tr>
+    </tbody>
+</table>

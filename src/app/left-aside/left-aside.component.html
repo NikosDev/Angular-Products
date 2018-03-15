@@ -1,27 +1,43 @@
 <div class="box">
   <h5>Brands:</h5>
-  <div *ngFor="let brand of brandCheckbox ">
-      <input  type="checkbox"  (click)="checkboxValues(brand,'brand', $event)"> {{ brand.brand }}
+  <div *ngFor="let brand of brandCheckbox" class="pretty p-icon p-curve p-jelly">
+      <input  type="checkbox"  (click)="checkboxValues(brand,'brand', $event)"> 
+      <div class="state p-primary">
+          <i class="icon material-icons">done</i>
+          <label id="product-name">{{ brand.brand }}</label>
+      </div>
   </div>
 </div>
 
 <div class="box">
   <h5>Cpu:</h5>
-  <div *ngFor="let cpu of cpuCheckbox ">
-      <input  type="checkbox" (click)="checkboxValues(cpu,'cpu', $event)"> {{ cpu.cpu }}cores
+  <div *ngFor="let cpu of cpuCheckbox"  class="pretty p-icon p-curve p-jelly">
+      <input  type="checkbox" (click)="checkboxValues(cpu,'cpu', $event)"> 
+      <div class="state p-primary">
+          <i class="icon material-icons">done</i>
+          <label id="product-name">{{ cpu.cpu }}cores</label>
+      </div>
   </div>
 </div>
 
 <div class="box">
   <h5>Ram:</h5>
-  <div *ngFor="let ram of ramCheckbox ">
-      <input  type="checkbox"  (click)="checkboxValues(ram,'ram', $event)"> {{ ram.ram }}GB
+  <div *ngFor="let ram of ramCheckbox"  class="pretty p-icon p-curve p-jelly">
+      <input  type="checkbox"  (click)="checkboxValues(ram,'ram', $event)">
+      <div class="state p-primary">
+          <i class="icon material-icons">done</i>
+          <label id="product-name"> {{ ram.ram }}GB</label>
+      </div>
   </div>
 </div>
 
 <div class="box">
   <h5>OS:</h5>
-  <div *ngFor="let os of osCheckbox ">
-      <input  type="checkbox"  (click)="checkboxValues(os,'os', $event)"> {{ os.os }}
+  <div *ngFor="let os of osCheckbox"  class="pretty p-icon p-curve p-jelly">
+      <input  type="checkbox"  (click)="checkboxValues(os,'os', $event)">
+      <div class="state p-primary">
+          <i class="icon material-icons">done</i>
+          <label id="product-name">{{ os.os }}</label>
+      </div>
   </div>
 </div>
