@@ -29,9 +29,6 @@ export class LeftAsideComponent implements OnInit {
     this.cpuCheckbox = this.productsService.uniqueCpu();
     this.osCheckbox = this.productsService.uniqueOs();
   }
-  newMessage(){
-    this.productsService.changeMessage('victory!')
-  }
   
   checkboxValues(product,checkboxName, event){
     if ( event.target.checked ) {

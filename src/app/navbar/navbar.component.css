@@ -1,3 +1,12 @@
 .navbar{
-    margin-bottom: 20px;
+    background-color:  #152c4bcc !important
+}
+
+.navbar-brand{
+    color: aliceblue;
+    font-size: x-large;
+}
+
+#image-space{
+    margin-right: 4px;
 }
