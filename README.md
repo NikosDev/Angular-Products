@@ -2,18 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
-## Info
+# Info
 
 Searching filters for smartphones.
 
-## Site
+# Site 
 
-[http://angular-filters.surge.sh/](http://angular-filters.surge.sh/)
+[http://angular-filters.surge.sh/](http://angular-filters.surge.sh/) :crown:
 
-## Run Development server
+# Run Development server 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Support
+# Support :v:
 
 Please [open an issue](https://github.com/NikosDev/Angular-Products/issues/new) for support.
