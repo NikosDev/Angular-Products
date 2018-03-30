@@ -16,4 +16,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 # Support 
 
-Please [open an issue](https://github.com/NikosDev/Angular-Products/issues/new) for support :v:
+Please [open an issue](https://github.com/NikosDev/Angular-Products/issues/new) for support
