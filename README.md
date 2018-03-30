@@ -14,6 +14,6 @@ Searching filters for smartphones.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-# Support :v:
+# Support 
 
-Please [open an issue](https://github.com/NikosDev/Angular-Products/issues/new) for support.
+Please [open an issue](https://github.com/NikosDev/Angular-Products/issues/new) for support :v:
