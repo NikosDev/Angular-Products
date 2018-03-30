@@ -2,11 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
-# Info :trophy:
+# Info 
 
 Searching filters for smartphones.
 
-# Site :crown:
+# Site 
 
 [http://angular-filters.surge.sh/](http://angular-filters.surge.sh/) 
 
